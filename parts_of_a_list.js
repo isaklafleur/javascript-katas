@@ -31,3 +31,15 @@ a = [|"az", "toto", "picaro", "zone", "kiwi"|] -->
 You can see other examples for each language in "Your test cases"
 */
 
+function partlist(arr) {
+    var returnArray=[];
+    for( var i=1; i<arr.length; i++){
+      var newArray = [];
+      newArray.push(arr.slice(0,i).join(" "));
+      newArray.push(arr.slice(i).join(" "));
+      returnArray.push(newArray);
+    }
+    
+    return returnArray;
+}
+
