@@ -12,21 +12,16 @@ Your task is to return number of people in the bus after the last bus station. T
 Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
 */
 
-Test.assertEquals(number([[10,0],[3,5],[5,8]]),5);
-Test.assertEquals(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]),17);
-Test.assertEquals(number([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]),21);
+
+const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+
+/////////////////////////
 
 var number = function(busStops){
-    var onBuss = 0;
-    var offBuss = 0;
-    var onBuss = busStops.forEach(function(jumpOn) {
-        return jumpOn;
-    });
-    console.log(onBuss);
-    var offBus = busStops.forEach(function(jumpOff) {
-        return jumpOff;
-    });
-    console.log(offBuss);
+  var totalPeople = 0;
+  for (var i = 0; i < busStops.length; i++) {
+    totalPeople += busStops[i][0];
+    totalPeople -= busStops[i][1];
+  }
+  return totalPeople;
 }
-
-number([[10,0],[3,5],[5,8]]);
