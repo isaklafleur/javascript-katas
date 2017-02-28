@@ -28,14 +28,14 @@ queueTime([2,3,10], 2)
 // should return 12
 */
 
-function queueTime(customers, n) {
-  var w = new Array(n).fill(0);
-  for (let t of customers) {
-    let idx = w.indexOf(Math.min(...w));
-    w[idx] += t;
-  }
-  return Math.max(...w);
-}
+// function queueTime(customers, n) {
+//   var w = new Array(n).fill(0);
+//   for (let t of customers) {
+//     let idx = w.indexOf(Math.min(...w));
+//     w[idx] += t;
+//   }
+//   return Math.max(...w);
+// }
 
 function queueTime(customers, n) {
   let tills = Array(n).fill(0);
@@ -44,6 +44,10 @@ function queueTime(customers, n) {
     let nextTill = tills.indexOf(Math.min(...tills))
     tills[nextTill] += customer;
   });
-
+  //console.log(Math.max(...tills));
   return Math.max(...tills);
 }
+
+queueTime([2,3,10], 2);
+queueTime([1,2,3,4], 1);
+queueTime([2,2,3,3,4,4], 2);
