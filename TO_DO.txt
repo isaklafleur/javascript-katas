@@ -1,2 +1,1 @@
-måste träna på 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder
+Fortsätt här: http://www.codewars.com/kata/5721a78c283129e416000999
