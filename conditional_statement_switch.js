@@ -1,5 +1,5 @@
 /*
-Training JS #8:
+Training JS #8
 Conditional statement--switch
 
 In javascript, switch is another condition statement.
