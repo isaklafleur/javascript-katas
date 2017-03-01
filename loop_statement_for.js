@@ -52,17 +52,42 @@ I've defined two array odd and even in the function, and also wrote the return s
 function pickIt(arr){
     var odd=[],even=[];
     for (var i = 0; i < arr.length; i++) {
-        if(i % 2 === 0) {
-            even.push(i);
+        if(arr[i] % 2 === 0) {
+            even.push(arr[i]);
         } else {
-            odd.push(i);
+            odd.push(arr[i]);
         }
     }
 
     return [odd,even];
 }
 pickIt([1,2]),[[1],[2]]
+
+//////////////////////
+function pickIt (arr) {
   
- 
+  let odd = []
+  let even =[]
+      
+  for (var x of arr) {
+      ((x % 2) ? odd : even).push(x)    
+  }
+      
+  return [odd, even]
+}
+
+/////////////////
+
+function pickIt(arr){
+  var odd=[],even=[];
+  for (i of arr) {
+    if (i % 2 === 0) {
+      even.push(i);
+    } else {
+      odd.push(i);
+    }
+  } 
+  return [odd,even];
+} 
   
 
