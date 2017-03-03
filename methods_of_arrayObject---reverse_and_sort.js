@@ -82,3 +82,32 @@ Comprehensive two conditions should be like this:
   sortIt([1,2,3,4,4,5,5,6,6]) should return [3,2,1,6,6,5,5,4,4]
 */
 
+//////////////////////////////////////////////////////////
+
+function sortIt(arr){
+  var map = new Object();  
+  arr.forEach(a => map[a] = isNaN(map[a]) ? 1 : map[a] + 1);    
+  return arr.slice().sort((a, b) => map[a] === map[b] ? b - a : map[a] - map[b]);  
+}
+
+//////////////////////////////////////////////////////////
+
+function sortIt(arr){
+  let numberOf = {};
+  arr.forEach(x => numberOf[x] = (numberOf[x]||0) + 1);
+  return arr.slice().sort((x, y) => numberOf[x] - numberOf[y] || y - x);
+}
+
+//////////////////////////////////////////////////////////
+
+sortIt([1,1,1,2,2,3])
+sortIt([1,1,1,2,2,2,3,3,3])
+sortIt([1,2,3,4,4,5,5,6,6])
+/*
+    Test.assertSimilar(sortIt([1,1,1,2,2,3]) , [3,2,2,1,1,1]);
+    Test.assertSimilar(sortIt([1,1,1,2,2,2,3,3,3]) , [3,3,3,2,2,2,1,1,1]);
+    Test.assertSimilar(sortIt([1,2,3,4,4,5,5,6,6]) , [3,2,1,6,6,5,5,4,4]);
+    var arr1=[1,3,3,5,2,2,4,6,6,7,7,7],copy=arr1.slice();
+    Test.assertSimilar(sortIt(arr1) , [5,4,1,6,6,3,3,2,2,7,7,7]);
+    Test.assertSimilar(arr1 , copy , "You should not modify the original array");
+*/
